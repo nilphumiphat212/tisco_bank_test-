@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อ 2</title>
+    <script>
+        function textbox1Handle() {
+            tx1 = document.querySelector('#tx1')
+            tx2 = document.querySelector('#tx2')
+            if (tx1.value.length > 0) tx2.disabled = false
+            else tx2.disabled = true
+        }
+        function textbox2Handle() {
+            tx2 = document.querySelector('#tx2')
+            label = document.querySelector('#label')
+            label.innerHTML = `Label value: ${tx2.value}`
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Textbox 1" id="tx1" oninput="textbox1Handle()" />
+    <input type="text" placeholder="Textbox 2" id="tx2" disabled oninput="textbox2Handle()" /><br>
+    <span id="label">Label value: </span>
+</body>
+</html>
